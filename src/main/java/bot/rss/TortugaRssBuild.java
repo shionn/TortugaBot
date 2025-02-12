@@ -25,9 +25,11 @@ import com.rometools.rome.io.SyndFeedOutput;
 
 public class TortugaRssBuild {
 
+	private static final String BASE_URL = "https://shionn.github.io/TortugaBot/";
+
 	static enum Model {
-		QUEST("img/tortuga-2025/quests/", "rss/tortuga-quests.rss", "Mise à jour des quetes "),
-		PLAYERS("img/tortuga-2025/players/", "rss/tortuga-players.rss", "Mise à jour des joueurs "),;
+		QUEST("img/tortuga-2025/quests/", "docs/rss/tortuga-quests.rss", "Mise à jour des quetes "),
+		PLAYERS("img/tortuga-2025/players/", "docs/rss/tortuga-players.rss", "Mise à jour des joueurs "),;
 
 		private String imgFolder;
 		private String rssFile;
@@ -95,7 +97,7 @@ public class TortugaRssBuild {
 		SyndFeed feed = new SyndFeedImpl();
 		feed.setFeedType("rss_2.0");
 		feed.setTitle("Pour la Gloire de Tortuga");
-		feed.setLink(Configuration.get().getBase());
+		feed.setLink(BASE_URL);
 		feed.setDescription("Pour la Gloire de Tortuga ");
 
 		List<SyndEntry> entries = Arrays.stream(new File(DOCS + model.imgFolder).listFiles(new FilenameFilter() {
@@ -136,7 +138,7 @@ public class TortugaRssBuild {
 	}
 
 	private String toUrl(Model model, File file) {
-		String url = Configuration.get().getBase();
+		String url = BASE_URL;
 		if (!url.endsWith("/")) {
 			url += "/";
 		}
