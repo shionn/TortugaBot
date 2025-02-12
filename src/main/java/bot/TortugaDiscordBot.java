@@ -43,13 +43,15 @@ public class TortugaDiscordBot implements EventListener {
 	public static void main(String[] args) throws InterruptedException, IOException, FeedException {
 
 		TortugaDiscordBot bot = new TortugaDiscordBot();
-		bot.start(Model.PLAYERS);
-		bot.start(Model.QUESTS);
+		bot.start(Model.PLAYERS_GALY);
+		bot.start(Model.QUESTS_GALY);
 	}
 
 	private void start(Model model) throws InterruptedException, IOException, FeedException {
 		SyndEntry syndEntry = getLastEntry(model);
 		JDA jda = buildBot();
+
+//		jda.getTextChannels().stream().forEach(System.out::println);
 
 		TextChannel channel = jda.getTextChannelById(model.getChannel());
 		channel.getHistory().retrievePast(10).queue(history -> {

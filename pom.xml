@@ -56,6 +56,18 @@
 			<version>5.2.2</version>
 		</dependency>
 
+		<!--pour les capture d'écran-->
+		<dependency>
+			<groupId>org.openjfx</groupId>
+			<artifactId>javafx-web</artifactId>
+			<version>21.0.5</version>
+		</dependency>
+		<dependency>
+			<groupId>org.openjfx</groupId>
+			<artifactId>javafx-swing</artifactId>
+			<version>21.0.5</version>
+		</dependency>
+
 		<!--pour le flux RSS-->
 		<dependency>
 			<groupId>com.rometools</groupId>
@@ -63,9 +75,44 @@
 			<version>2.1.0</version>
 		</dependency>
 
+		<!-- divers -->
+		<dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>2.18.0</version>
+		</dependency>
+
 	</dependencies>
 
 	<profiles>
+		<profile>
+			<id>TortugaPlayers</id>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.openjfx</groupId>
+						<artifactId>javafx-maven-plugin</artifactId>
+						<configuration>
+							<mainClass>bot.img.TortugaPlayersJavaFxImgCapture</mainClass>
+						</configuration>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+		<profile>
+			<id>TortugaQuests</id>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.openjfx</groupId>
+						<artifactId>javafx-maven-plugin</artifactId>
+						<configuration>
+							<mainClass>bot.img.TortugaQuestsJavaFxImgCapture</mainClass>
+						</configuration>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
 	</profiles>
 
 </project>
