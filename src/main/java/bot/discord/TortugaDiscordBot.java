@@ -27,8 +27,8 @@ public class TortugaDiscordBot implements EventListener {
 	@RequiredArgsConstructor
 	@Getter
 	private enum Model {
-		PLAYERS("https://shionn.github.io/rss/tortuga-players.rss", 1324709379110469653L),
-		QUESTS("https://shionn.github.io/rss/tortuga-quests.rss", 1307668938385002538L),
+		PLAYERS("https://shionn.github.io/TortugaBot/rss/players.rss", 1324709379110469653L),
+		QUESTS("https://shionn.github.io/TortugaBot/rss/quests.rss", 1307668938385002538L),
 		PLAYERS_GALY("https://shionn.github.io/TortugaBot/rss/players.rss", 1123512494468644984L),
 		QUESTS_GALY("https://shionn.github.io/TortugaBot/rss/quests.rss", 1123512494468644984L);
 
@@ -43,8 +43,8 @@ public class TortugaDiscordBot implements EventListener {
 	public static void main(String[] args) throws InterruptedException, IOException, FeedException {
 
 		TortugaDiscordBot bot = new TortugaDiscordBot();
-		bot.start(Model.PLAYERS_GALY);
-		bot.start(Model.QUESTS_GALY);
+		bot.start(Model.PLAYERS);
+		bot.start(Model.QUESTS);
 	}
 
 	private void start(Model model) throws InterruptedException, IOException, FeedException {
