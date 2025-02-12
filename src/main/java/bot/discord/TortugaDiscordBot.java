@@ -1,4 +1,4 @@
-package bot;
+package bot.discord;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -29,8 +29,8 @@ public class TortugaDiscordBot implements EventListener {
 	private enum Model {
 		PLAYERS("https://shionn.github.io/rss/tortuga-players.rss", 1324709379110469653L),
 		QUESTS("https://shionn.github.io/rss/tortuga-quests.rss", 1307668938385002538L),
-		PLAYERS_GALY("https://shionn.github.io/rss/tortuga-players.rss", 1123512494468644984L),
-		QUESTS_GALY("https://shionn.github.io/rss/tortuga-quests.rss", 1123512494468644984L);
+		PLAYERS_GALY("https://shionn.github.io/TortugaBot/rss/players.rss", 1123512494468644984L),
+		QUESTS_GALY("https://shionn.github.io/TortugaBot/rss/quests.rss", 1123512494468644984L);
 
 		private final String rss;
 		private final long channel;
