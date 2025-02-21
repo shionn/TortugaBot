@@ -5,3 +5,4 @@ target/
 site
 shionn.github.io
 .externalToolBuilders/
+*.log
