@@ -42,7 +42,7 @@ public abstract class JavaFxImgCapture extends Application implements ChangeList
 		webView.getEngine().load(url);
 		webView.getEngine().getLoadWorker().stateProperty().addListener(this);
 
-		Scene scene = new Scene(webView, 1500, 2000);
+		Scene scene = new Scene(webView, 1500, 1400);
 		primaryStage.setScene(scene);
 		primaryStage.show();
 
@@ -60,8 +60,10 @@ public abstract class JavaFxImgCapture extends Application implements ChangeList
 			sleepAndExecute(new Runnable() {
 				@Override
 				public void run() {
-					requestCapture(getElementId(), getImgTargetPath());
+					requestScrollToElement(getElementId());
+//					requestCapture(getElementId(), getImgTargetPath());
 				}
+
 			});
 		}
 	}
@@ -76,9 +78,20 @@ public abstract class JavaFxImgCapture extends Application implements ChangeList
 				} catch (InterruptedException e) {
 					e.printStackTrace();
 				}
-
 			}
 		}).start();
+	}
+
+	private void requestScrollToElement(String id) {
+		sleepAndExecute(new Runnable() {
+			@Override
+			public void run() {
+				webView
+						.getEngine()
+						.executeScript("document.getElementById(\"" + id + "\").scrollIntoView({block : 'center'})");
+				requestCapture(id, getImgTargetPath());
+			}
+		});
 	}
 
 	private void requestCapture(String id, String path) {

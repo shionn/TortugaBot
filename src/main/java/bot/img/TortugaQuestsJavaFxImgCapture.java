@@ -12,7 +12,7 @@ public class TortugaQuestsJavaFxImgCapture extends JavaFxImgCapture {
 
 	@Override
 	String getBaseUrl() {
-		return "draft/pour-la-gloire-de-tortuga-quests.html";
+		return "2025/pour-la-gloire-de-tortuga.html";
 	}
 
 	@Override
