@@ -55,7 +55,7 @@ public class TortugaDiscordBot implements EventListener {
 //		jda.getTextChannels().stream().forEach(System.out::println);
 
 		TextChannel channel = jda.getTextChannelById(model.getChannel());
-		channel.getHistory().retrievePast(10).queue(history -> {
+		channel.getHistory().retrievePast(30).queue(history -> {
 			boolean notPosted = history.stream().filter(m -> isAlreadyPosted(m, syndEntry))
 					.filter(m -> syndEntry.getUri().equalsIgnoreCase(m.getContentRaw())).findAny().isEmpty();
 			if (notPosted) {
