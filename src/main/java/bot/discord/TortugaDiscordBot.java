@@ -27,9 +27,9 @@ public class TortugaDiscordBot implements EventListener {
 	@RequiredArgsConstructor
 	@Getter
 	private enum Model {
-		PLAYERS("https://shionn.github.io/TortugaBot/rss/players.rss", 1324709379110469653L),
-		// ancien : 1307668938385002538L
-		QUESTS("https://shionn.github.io/TortugaBot/rss/quests.rss", 1324709379110469653L),
+		// ancien : 1324709379110469653L
+		PLAYERS("https://shionn.github.io/TortugaBot/rss/players.rss", 1307668938385002538L),
+		QUESTS("https://shionn.github.io/TortugaBot/rss/quests.rss", 1307668938385002538L),
 		PLAYERS_GALY("https://shionn.github.io/TortugaBot/rss/players.rss", 1123512494468644984L),
 		QUESTS_GALY("https://shionn.github.io/TortugaBot/rss/quests.rss", 1123512494468644984L);
 
