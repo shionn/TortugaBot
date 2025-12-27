@@ -8,12 +8,12 @@ public class TortugaPlayersJavaFxImgCapture extends JavaFxImgCapture {
 
 	@Override
 	String getBaseUrl() {
-		return "2025/pour-la-gloire-de-tortuga.html";
+		return "draft/tortuga-2026.html";
 	}
 
 	@Override
 	String getElementId() {
-		return "participants";
+		return "tortuga-2026-participants";
 	}
 
 	@Override

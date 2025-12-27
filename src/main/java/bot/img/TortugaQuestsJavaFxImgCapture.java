@@ -8,11 +8,11 @@ public class TortugaQuestsJavaFxImgCapture extends JavaFxImgCapture {
 		launch(args);
 	}
 
-	private static final String QUEST = "quest-";
+	private static final String QUEST = "tortuga-2026-quest-";
 
 	@Override
 	String getBaseUrl() {
-		return "2025/pour-la-gloire-de-tortuga.html";
+		return "draft/tortuga-2026.html";
 	}
 
 	@Override
